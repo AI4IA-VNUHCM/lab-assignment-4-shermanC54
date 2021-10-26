@@ -17,7 +17,20 @@ ______________________________________
 
 void Ex1(int n){
 	//Your codes here
-    
+int i, arr[50][50];
+	arr[0][0] = 0;
+	arr[1][0] = 1;
+	arr[2][0] = 0;
+	for (int k=1; k<=n+1; k++)
+	{	
+		for (i=1; i<=k; i++){
+			printf("%d ", arr[i][k-1]);
+		}
+		for (i=1; i<=k+1; i++){
+			arr[i][k] = arr[i][k-1] + arr[i-1][k-1];
+		}
+		printf("\n");
+	}
 }
 
 int main(int argc, char *argv[]) {
